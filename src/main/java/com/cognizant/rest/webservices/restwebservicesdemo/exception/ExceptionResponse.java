@@ -1,4 +1,4 @@
-package com.test.rest.webservices.restwebservicesdemo.exception;
+package com.cognizant.rest.webservices.restwebservicesdemo.exception;
 
 import java.util.Date;
 

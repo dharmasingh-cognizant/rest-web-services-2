@@ -1,6 +1,4 @@
-package com.test.rest.webservices.restwebservicesdemo.exception;
-
-import com.test.rest.webservices.restwebservicesdemo.user.UserNotFoundException;
+package com.cognizant.rest.webservices.restwebservicesdemo.exception;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,12 +22,12 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         ExceptionResponse exceptionResponse = new ExceptionResponse( new Date() , ex.getMessage() , request.getDescription(false));
         return new ResponseEntity(exceptionResponse , HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
-    @ExceptionHandler(UserNotFoundException.class)
-    public final ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex, WebRequest request){
-        ExceptionResponse exceptionResponse = new ExceptionResponse( new Date() , ex.getMessage() , request.getDescription(false));
-        return new ResponseEntity(exceptionResponse , HttpStatus.NOT_FOUND);
-    }
+//
+//    @ExceptionHandler(UserNotFoundException.class)
+//    public final ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException ex, WebRequest request){
+//        ExceptionResponse exceptionResponse = new ExceptionResponse( new Date() , ex.getMessage() , request.getDescription(false));
+//        return new ResponseEntity(exceptionResponse , HttpStatus.NOT_FOUND);
+//    }
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
